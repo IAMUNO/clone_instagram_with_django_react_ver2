@@ -1,10 +1,15 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
 from instagram.models import Tag, Comment, Post
 
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['photo_tag', 'caption']
+    list_display_links = ['caption']
+
+    def photo_tag(self, post):
+        return mark_safe(f"<img src={post.photo.url} style='width:100px;' />")
 
 
 @admin.register(Comment)
