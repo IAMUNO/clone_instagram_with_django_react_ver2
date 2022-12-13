@@ -1,13 +1,15 @@
-import './App.scss';
+import React from "react";
+import 'App.scss';
+import PostList from "PostList";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>HI</h1>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            Hello
+            <PostList />
+        </div>
+    );
 }
 
 export default App;
